@@ -27,9 +27,9 @@ try:
     pyautogui.click()
     pyautogui.write('thomazrb@gmail.com')
     pyautogui.press('tab', presses=2)
-    pyautogui.write('valor atual do dólar')
+    pyautogui.write('valor atual do dolar')
     pyautogui.press('tab')
-    pyautogui.write(f'o valor do dólar nesse momento é R${valor}')
+    pyautogui.write(f'o valor do dolar nesse momento é R${valor}')
     pyautogui.hotkey('ctrl', 'enter')
 
 except pyautogui.FailSafeException:
