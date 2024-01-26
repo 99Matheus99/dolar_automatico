@@ -14,10 +14,23 @@ try:
     pyautogui.moveTo(232, 496, 2, pyautogui.easeOutQuad)
     pyautogui.click(clicks=2)
     pyautogui.hotkey('ctrl', 'c')
-
-    # PARTE QUE MOSTRA NA TELA
     valor = pyperclip.paste()
-    pyautogui.alert(text=f'o valor atual do dólar é R${valor}', title='Saída', button='OK')
+
+    # PARTE QUE ABRE O EMAIL
+    pyautogui.moveTo(360, 56, 2, pyautogui.easeOutQuad)
+    pyautogui.click()
+    pyautogui.write('https://mail.google.com')
+    pyautogui.press('enter')
+
+    # PARTE QUE ESCREVE O EMAIL
+    pyautogui.moveTo(82, 203, 2, pyautogui.easeOutQuad)
+    pyautogui.click()
+    pyautogui.write('thomazrb@gmail.com')
+    pyautogui.press('tab', presses=2)
+    pyautogui.write('valor atual do dólar')
+    pyautogui.press('tab')
+    pyautogui.write(f'o valor do dólar nesse momento é R${valor}')
+    pyautogui.hotkey('ctrl', 'enter')
 
 except pyautogui.FailSafeException:
      pyautogui.alert(text='Evite mover o mouse durante a execução do programa', title='Erro', button='OK')
